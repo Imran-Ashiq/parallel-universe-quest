@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel Universe Quest</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
+    <style>
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background: #000;
+            font-family: 'Arial', sans-serif;
+        }
+        #game-container { 
+            width: 100vw; 
+            height: 100vh; 
+            position: relative;
+        }
+        #hud {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: #fff;
+            font-size: 18px;
+            z-index: 100;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        #score, #health, #stamina {
+            margin-bottom: 10px;
+            padding: 12px 16px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 8px;
+            border-left: 4px solid #00ff88;
+            transition: all 0.3s ease;
+        }
+        #health { border-left-color: #ff3366; }
+        #stamina { border-left-color: #3366ff; }
+        
+        #score:hover, #health:hover, #stamina:hover {
+            transform: translateX(5px);
+            background: rgba(0,0,0,0.8);
+        }
+        
+        #gameOver {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff3366;
+            font-size: 48px;
+            text-align: center;
+            z-index: 200;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        #controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+            text-align: right;
+            z-index: 100;
+            background: rgba(0,0,0,0.7);
+            padding: 12px;
+            border-radius: 8px;
+            transition: opacity 0.3s ease;
+        }
+        
+        #controls:hover {
+            opacity: 1;
+        }
+        
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .bar-fill {
+    height: 20px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+#health-fill {
+    background: linear-gradient(90deg, #ff3366, #ff6666);
+}
+
+#stamina-fill {
+    background: linear-gradient(90deg, #3366ff, #66ffff);
+}
+    </style>
+</head>
+<body>
+    <div id="game-container"></div>
+    <div id="hud">
+        <div id="score">Score: 0</div>
+        <div id="health">Health: 100%</div>
+        <div id="stamina">Stamina: 100%</div>
+    </div>
+    </div>
+    <div id="gameOver">
+        <h1>Game Over!</h1>
+        <p>Press F5 to restart</p>
+    </div>
+    <div id="controls">
+        <p>Controls:</p>
+        <p>WASD - Move</p>
+        <p>Space - Up</p>
+        <p>Ctrl - Down</p>
+        <p>E - Dash</p>
+        <p style="color: #ffff00;">✦ Collect yellow orbs for points!</p>
+        <p style="color: #ff0000;">⚠ Avoid red enemies!</p>
+    </div>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
