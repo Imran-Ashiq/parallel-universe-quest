@@ -34,3 +34,14 @@ npm install
 
 # Start development server
 npm run dev
+
+## 🔧  Built With
+Three.js - 3D graphics library
+Vite - Build tool and development server
+🎯 Future Updates
+<input disabled="" type="checkbox"> More enemy types
+<input disabled="" type="checkbox"> Power-ups system
+<input disabled="" type="checkbox"> Level progression
+<input disabled="" type="checkbox"> High score system
+<input disabled="" type="checkbox"> Sound effects
+
